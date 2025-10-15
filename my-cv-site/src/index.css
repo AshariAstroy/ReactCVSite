@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import './App.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* https://tailwindcss.com/docs/colors */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 30px theme('colors.zinc.950'),
+                 0 0 40px theme('colors.zinc.950'),
+                 0 0 50px theme('colors.zinc.950'),
+                 0 0 70px theme('colors.zinc.950'),
+  }
+}
