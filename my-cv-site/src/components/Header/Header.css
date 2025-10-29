@@ -1,0 +1,11 @@
+/************ Header CSS ************/
+
+header a {
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--buttons-hover-animation);
+}
+
+header a:hover {
+  color: var(--hover-accent);
+}

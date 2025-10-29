@@ -1,0 +1,139 @@
+/************ About CSS ************/
+
+.about {
+  position: relative;
+  margin-top: 0;
+  padding: 50px 0 100px 0;
+  background-image: url('../../assets/img/bg-contact.png');
+  background-color: var(--bg-dark);
+  background-position: top center;
+}
+
+.about__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 4rem;
+  margin-top: 50px !important;
+  margin-bottom: 100px !important;
+}
+
+.about__img-wrapper {
+  width: 350px;
+  height: auto;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.about__img {
+  width: 350px;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.about__button {
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.about__info {
+  display: grid;
+  grid-template-columns: repeat(1, 500px);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* .about__box {
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  text-align: center;
+  padding: 1rem 1.25rem;
+} */
+
+.about__title {
+  font-size: var(--fs-title);
+  font-weight: var(--fs-title-weight);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.about__subtitle {
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fs-subtitle-weight);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.about__description {
+  color: #B8B8B8;
+  font-size: var(--fs-text);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height-text);
+  width: 96%;
+}
+
+/************ BREACKPOINTS ************/
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .about__title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about__subtitle {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about__description {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about__container {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+
+  .about__img-wrapper {
+    justify-content: center;
+  }
+
+  .about__img {
+    width: 300px;
+  }
+
+  .about__button {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 576px) {
+  .about__info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .about__description {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* For x-small devices */
+@media screen and (max-width: 350px) {
+  .about__info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

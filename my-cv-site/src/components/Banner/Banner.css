@@ -1,0 +1,91 @@
+/************ Banner CSS ************/
+
+.banner {
+  position: relative;
+  margin-top: 0;
+  padding: 100px 0 100px 0;
+  background-image: url('../../assets/img/bg-banner.png');
+  background-color: var(--bg-dark);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.banner .tagline {
+  font-weight: var(--fs-title-weight);
+  letter-spacing: var(--f-letter-spacing);
+  padding: 8px 10px;
+  border-radius: var(--border-radius);
+  background: linear-gradient(90.21deg, rgba(0, 201, 201, 0.816) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+  border: var(--border-light);
+  font-size: var(--fs-subtitle);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.banner h1 {
+  font-size: var(--fs-banner-title);
+  font-weight: var(--fs-title-weight);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner p {
+  color: var(--grey);
+  font-size: var(--fs-text);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height-text);
+  width: 96%;
+  margin-bottom: 20px;
+}
+
+.banner button {
+  color: var(--white);
+  font-weight: var(--fs-subtitle-weight);
+  font-size: var(--fs-subtitle);
+  letter-spacing: var(--f-letter-spacing);
+  display: flex;
+  align-items: center;
+}
+
+.banner button .inner-content {
+  padding: 18px 36px;
+  font-size: var(--fs-subtitle);
+  border: var(--border-skills);
+  background-color: var(--bg-dark);
+}
+
+.banner button:hover svg {
+  margin-left: 25px;
+}
+
+.banner img {
+  animation: var(--img-animation);
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.txt-rotate > .wrap {
+  border-right: var(--border-wrap);
+}
+
+.banner .txt-rotate {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.movingtext {
+  min-height: 1.2em;
+}

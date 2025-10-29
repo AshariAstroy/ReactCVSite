@@ -1,0 +1,30 @@
+/************ Footer CSS ************/
+
+.footer {
+  height: 50px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.col {
+  justify-content: flex-end;
+}
+
+.footer p {
+  font-weight: var(--fs-footer-weight);
+  font-size: var(--fs-footer);
+  color: var(--grey);
+  letter-spacing: var(--f-letter-spacing-footer);
+  margin-top: 20px;
+}
+
+.footer a {
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--buttons-hover-animation);
+}
+
+.footer a:hover {
+  color: var(--hover-accent);
+}

@@ -1,0 +1,125 @@
+/************ Skills CSS ************/
+
+.skill {
+  position: relative;
+  margin-top: 0;
+  padding: 50px 0 100px 0;
+  background-image: url('../../assets/img/bg-contact.png');
+  background-color: var(--bg-dark);
+  background-position: top center;
+}
+
+.skill img {
+  margin-left: 50px;
+  width: 100%;
+  height: auto;
+  animation: var(--img-animation);
+}
+
+.skill__title {
+  font-size: var(--fs-title);
+  font-weight: var(--fs-title-weight);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.skill__subtitle {
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fs-subtitle-weight);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.skill__text {
+  color: var(--grey);
+  font-size: var(--fs-text);
+  letter-spacing: var(--f-letter-spacing);
+  line-height: var(--f-line-height-text);
+  margin: 14px 0 50px 0;
+}
+
+.skill__boxes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  text-align: center;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.skill__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  border: var(--border-skills);
+  background: var(--bg-dark);
+  color: var(--white);
+  font-size: var(--fs-contact-text);
+  cursor: default;
+  transition: var(--skills-hover-animation);
+  height: 80px;
+  min-width: 120px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.skill__box:hover {
+  transform: scale(1.05);
+  color: var(--hover-accent);
+}
+
+/************ BREACKPOINTS ************/
+
+/* Extra large screens: 4 columns */
+@media (min-width: 1200px) {
+  .skill__boxes {
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+  }
+}
+
+/* Large screens: 3 columns */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .skill__boxes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skill__box { 
+    font-size: var(--fs-text); 
+  }
+}
+
+/* Medium screens: 2 columns */
+@media (min-width: 768px) and (max-width: 991px) {
+  .skill__boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 767px) {
+  .skill__boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill__title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skill__subtitle {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skill__text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
