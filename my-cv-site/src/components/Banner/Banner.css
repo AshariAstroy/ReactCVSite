@@ -10,6 +10,11 @@
   background-repeat: no-repeat;
 }
 
+.banner__section {
+  margin: 0 auto 2rem auto;
+  max-width: 1200px;
+}
+
 .banner .tagline {
   font-weight: var(--fs-title-weight);
   letter-spacing: var(--f-letter-spacing);

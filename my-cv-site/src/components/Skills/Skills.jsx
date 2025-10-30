@@ -7,7 +7,7 @@ const Skills = () => {
         <section className="skill" id="skills">
             <Container>
                 <Row className="align-items-center">
-                    <div>
+                    <div className="skills__container-title">
                         <h2 className="skill__title">Skills</h2>
                         <p className="skill__subtitle">I enjoy learning new things.</p>
                         <p className="skill__text">Here are some of the things that I've learned, learning, and continue to learn and improve.</p>

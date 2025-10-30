@@ -9,6 +9,11 @@
   background-position: top center;
 }
 
+.skills__container-title{
+  margin: 0 auto 2rem auto;
+  max-width: 1200px;
+}
+
 .skill img {
   margin-left: 50px;
   width: 100%;
@@ -98,6 +103,22 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .skill__boxes {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill__title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skill__subtitle {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skill__text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 }
 

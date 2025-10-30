@@ -8,7 +8,7 @@ import StarBorder from '../animations/StarBorder';
 const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = [ "Full-stack developer", "C# developer", ".NET developer" ];
+    const toRotate = ["Full-stack developer", "C# developer", ".NET developer"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(200 - Math.random() * 100);
     const period = 2000;
@@ -18,7 +18,7 @@ const Banner = () => {
             tick()
         }, delta)
 
-        return () => {clearInterval(ticker)};
+        return () => { clearInterval(ticker) };
     }, [text]);
 
     const tick = () => {
@@ -35,16 +35,16 @@ const Banner = () => {
         if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
             setDelta(period);
-        } else if(isDeleting && updatedText === '') {
+        } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
-            setLoopNum(loopNum +1);
+            setLoopNum(loopNum + 1);
             setDelta(500);
         }
     };
 
     return (
         <section className="banner" id="home">
-            <Container>
+            <div className="banner__section">
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my Portfolio</span>
@@ -54,10 +54,10 @@ const Banner = () => {
                         <button onClick={() => {
                             const contactSection = document.getElementById('contact');
                             if (contactSection) {
-                            contactSection.scrollIntoView({ behavior: 'smooth' });
+                                contactSection.scrollIntoView({ behavior: 'smooth' });
                             }
-                            }}
-                            >
+                        }}
+                        >
                             <StarBorder
                                 as="div"
                                 className="relative"
@@ -70,10 +70,10 @@ const Banner = () => {
                         </button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Header image"/>
+                        <img src={headerImg} alt="Header image" />
                     </Col>
                 </Row>
-            </Container>
+            </div>
         </section>
     );
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { FaGraduationCap, FaBriefcase, FaCalendarAlt } from "react-icons/fa";
 import './Qualification.css';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 const Qualification = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -11,12 +11,15 @@ const Qualification = () => {
   }
 
   return (
-    <section className="qualification section">
+    <section className="qualification">
       <Container>
-        <Row className="align-items-center">
-          <h2 className="qualification__journey">Qualification</h2>
-          <span className="qualification__subtitle__journey">My path to improvement</span>
-        </Row>
+        <div className="qualification__section">
+
+          <div className="qualification__container-title">
+            <h2 className="qualification__journey">Qualification</h2>
+            <span className="qualification__subtitle__journey">My path to improvement</span>
+          </div>
+
           <div className="qualification__container container">
             <div className="qualification__tabs">
               {/* tabs */}
@@ -43,14 +46,14 @@ const Qualification = () => {
             </div>
 
             <div className="qualification__sections">
-              
+
               <div
                 className={toggleState === 1
                   ? "qualification__content qualification__content-active"
                   : "qualification__content"}
               >
                 <div className="qualification__data">
-                  <div>
+                  <div className="qualification__data-left">
                     <h3 className="qualification__title">Full-stack developer</h3>
                     <span className="qualification__subtitle">Some place - Anywhere</span>
                     <div className="qualification__calender">
@@ -94,7 +97,7 @@ const Qualification = () => {
                   : "qualification__content"}
               >
                 <div className="qualification__data">
-                  <div>
+                  <div className="qualification__data-left">
                     <h3 className="qualification__title">Course</h3>
                     <span className="qualification__subtitle">Another place</span>
                     <div className="qualification__calender">
@@ -137,6 +140,7 @@ const Qualification = () => {
             </div>
 
           </div>
+        </div>
       </Container>
     </section>
   )

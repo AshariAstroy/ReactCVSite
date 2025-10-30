@@ -9,6 +9,11 @@
   background-position: top center;
 }
 
+.portfolio__container-title {
+  margin: 0 auto 2rem auto;
+  max-width: 1200px;
+}
+
 .portfolio__filters {
   display: flex;
   justify-content: center;

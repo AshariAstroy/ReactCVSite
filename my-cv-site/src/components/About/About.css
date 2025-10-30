@@ -9,6 +9,16 @@
   background-position: top center;
 }
 
+.about__section {
+  margin: 0 auto 2rem auto;
+  max-width: 1200px;
+}
+
+.about__container-title {
+  display: grid;
+  margin-bottom: 3rem;
+}
+
 .about__container {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -38,7 +48,7 @@
 
 .about__info {
   display: grid;
-  grid-template-columns: repeat(1, 500px);
+  grid-template-columns: 1fr;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -80,34 +90,37 @@
 /************ BREACKPOINTS ************/
 /* For large devices */
 @media screen and (max-width: 992px) {
-  .about__title {
-    display: flex;
-    justify-content: center;
-  }
-
-  .about__subtitle {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .about__description {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-
   .about__container {
     grid-template-columns: 1fr;
     row-gap: 2.5rem;
   }
 
+  .about__container-title {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .about__subtitle {
+    margin: 0;
+  }
+
+  .about__description {
+    margin: 0;
+  }
+
+  .about__info {
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
   .about__img-wrapper {
+    margin: 0;
     justify-content: center;
   }
 
   .about__img {
+    margin: 0;
     width: 300px;
   }
 
@@ -121,7 +134,9 @@
 /* For small devices */
 @media screen and (max-width: 576px) {
   .about__info {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-content: center;
   }
 
   .about__description {

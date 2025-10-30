@@ -1,31 +1,26 @@
 import './Footer.css';
 import { Container, Row, Col } from "react-bootstrap";
-import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
+    const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
-        <Container style={{ padding: '25px 0 25px 0' }}>
-            <Row className="align-items-center">
-                <Col sm={6}>
-                    <a href="#contact">Contact</a>
-                    <p>This site was developed as a learning project. Please do not use any photos and pictures of me from this website for personal, commertial, or any other use.</p>
-                </Col>
-                <Col sm={6}>
-                    <div className="flex space-x-6 mr-10 col">
-                        <a href="https://www.linkedin.com/in/kristina-zoria/" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin className="w-8 h-8"/>
-                        </a>
-                        <a href="https://github.com/AshariAstroy" target="_blank" rel="noopener noreferrer">
-                        <FaGithub className="w-8 h-8"/>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=100007163671719" target="_blank" rel="noopener noreferrer">
-                        <FaFacebook className="w-8 h-8"/>
-                        </a>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+        <div className="footer__container container">
+            <div>
+                <ul className="footer__list">
+                    <li>This website was created as a learning project using free tutorials and royalty-free images. All rights belong to their original creators.</li>
+                    <li>The CV and portfolio content are for professional purposes only and may not be reused or copied for any other reason.</li>
+                    <li>Personal photos of me may not be used for any purpose.</li>
+                </ul>
+            </div>
+            <div>
+                <ul className="footer__rights">
+                    <li>Kristina Zoria © {year}</li>
+                    <li>All rights reserved.</li>
+                </ul>
+            </div>
+        </div>
     </footer>
   )
 }
