@@ -29,7 +29,6 @@ const Qualification = () => {
                   "qualification__button buttton--flex"}
                 onClick={() => toggleTab(1)}
               >
-                <i className="uil uil-graduation-cap"></i>{" "}
                 <FaGraduationCap className="qualification__icon w-9 h-9" /> Education
               </div>
 
@@ -39,7 +38,6 @@ const Qualification = () => {
                   "qualification__button buttton--flex"}
                 onClick={() => toggleTab(2)}
               >
-                <i className="uil uil-graduation-cap"></i>
                 {<FaBriefcase className="qualification__icon w-8 h-8" />}
                 Experience
               </div>
@@ -57,7 +55,6 @@ const Qualification = () => {
                     <h3 className="qualification__title">Full-stack developer</h3>
                     <span className="qualification__subtitle">Some place - Anywhere</span>
                     <div className="qualification__calender">
-                      <i className="uil uil-calendar-alt"></i>
                       <FaCalendarAlt className="qualification__calender-icon" />
                       Year - Year
                     </div>
@@ -71,6 +68,8 @@ const Qualification = () => {
                   <div></div>
                 </div>
 
+                <span className="qualification__border-mobile"></span>
+
                 <div className="qualification__data">
                   <div></div>
 
@@ -83,7 +82,6 @@ const Qualification = () => {
                     <h3 className="qualification__title">Specialist</h3>
                     <span className="qualification__subtitle">Some place</span>
                     <div className="qualification__calender">
-                      <i className="uil uil-calender-alt"></i>
                       <FaCalendarAlt className="qualification__calender-icon" />
                       Date Year - Date Year
                     </div>
@@ -101,7 +99,6 @@ const Qualification = () => {
                     <h3 className="qualification__title">Course</h3>
                     <span className="qualification__subtitle">Another place</span>
                     <div className="qualification__calender">
-                      <i className="uil uil-calender-alt"></i>
                       <FaCalendarAlt className="qualification__calender-icon" />
                       Date Year - Date Year
                     </div>
@@ -114,6 +111,8 @@ const Qualification = () => {
 
                   <div></div>
                 </div>
+
+                <span className="qualification__border-mobile"></span>
 
                 <div className="qualification__data">
                   <div></div>
@@ -129,7 +128,6 @@ const Qualification = () => {
                       Work place number 1
                     </span>
                     <div className="qualification__calender">
-                      <i className="uil uil-calender-alt"></i>
                       <FaCalendarAlt className="qualification__calender-icon" />
                       Date Year - Date Year
                     </div>
