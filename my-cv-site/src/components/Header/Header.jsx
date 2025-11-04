@@ -1,81 +1,85 @@
 import './Header.css';
-import { useState } from "react";
-import { Menu, X } from "lucide-react"; 
-import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFacebook, FaBars, FaAngleDoubleUp } from "react-icons/fa";
 import StarBorder from '../animations/StarBorder';
 import ShinyText from "../animations/ShinyText";
-
-const navList = [
-  { href: '#home', label: 'Home' },
-  { href: '#aboutme', label: 'About Me' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#contact', label: 'Contact Me' },
-];
+import { useState } from 'react';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [Toggle, showMenu] = useState(false);
 
   return (
-    <header className="scroll-mt-20 bg-[#121212] sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between py-6 px-4 lg:px-8">
-        <div className="text-3xl font-bold">
+    <header className="header">
+      <nav className="nav container header__container">
+        {/* Logo */}
+        <div className="nav__logo">
           <button onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState(null, '', window.location.pathname);
-              window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-              });
-            }}
+            e.preventDefault();
+            window.history.pushState(null, '', window.location.pathname);
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          }}
           >
-          <StarBorder
-            as="a"
-            className="star-border font-medium"
-            color="DeepSkyBlue"
-            speed="4s"
-            thickness="2"
-          >
-            <ShinyText 
-              text="CV Jane Doe" 
-              disabled={false} 
-              speed={4} 
-              className='custom-class'
-            />
-            <br />
-            <ShinyText 
-              text="Full-stack developer" 
-              disabled={false} 
-              speed={4} 
-              className='custom-class'
-            />
-          </StarBorder>
+            <StarBorder
+              as="a"
+              className="star-border"
+              color="DeepSkyBlue"
+              speed="4s"
+              thickness="2"
+            >
+              <ShinyText
+                text="CV Jane Doe"
+                disabled={false}
+                speed={4}
+                className='logo logo-title'
+              />
+              <br />
+              <ShinyText
+                text="Full-stack developer"
+                disabled={false}
+                speed={4}
+                className='logo logo-subtitle'
+              />
+            </StarBorder>
           </button>
         </div>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center space-x-4">
-          {/* Social icons */}
-          <div className="flex space-x-6 mr-10">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="w-8 h-8"/>
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="w-8 h-8"/>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="w-8 h-8"/>
-            </a>
-          </div>
+        {/* Desktop icons */}
+        <div className="header__icons-section desktop-icons">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="header__icon" />
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="header__icon" />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <FaFacebook className="header__icon" />
+          </a>
+        </div>
 
-          {/* Navigation links */}
-          {navList.map((link) => {
-            if (link.href === '#home') {
-              return (
+        {/* Mobile icons (inside menu) */}
+        <div className="header__icons-section mobile-icons">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="header__icon" />
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="header__icon" />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <FaFacebook className="header__icon" />
+          </a>
+        </div>
+
+
+        {/* Menu */}
+        <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
+          <ul className="nav__list">
+            <div className="first-row">
+              <li className="nav__item">
                 <StarBorder
                   as="a"
                   href="#home"
-                  key={link.href}
                   onClick={(e) => {
                     e.preventDefault();
                     window.history.pushState(null, '', '#home');
@@ -83,117 +87,151 @@ const Header = () => {
                       top: 0,
                       behavior: 'smooth'
                     });
+                    showMenu(false); // hides menu on click
                   }}
-                  className="star-border font-medium text-xl"
+                  className="nav__link star-border"
                 >
-                  {link.label}
+                  Home
                 </StarBorder>
-              );
-            }
+              </li>
 
-            if (link.href === '#aboutme') {
-              return (
+              <li className="nav__item">
                 <StarBorder
                   as="a"
                   href="#aboutme"
-                  key={link.href}
-                  className="star-border font-medium"
+                  className="nav__link star-border"
+                  onClick={() => showMenu(false)}
                 >
-                  {link.label}
+                  About Me
                 </StarBorder>
-              );
-            }
+              </li>
 
-            if (link.href === '#skills') {
-              return (
+              <li className="nav__item">
                 <StarBorder
                   as="a"
                   href="#skills"
-                  key={link.href}
-                  className="star-border font-medium"
+                  className="nav__link star-border"
+                  onClick={() => showMenu(false)}
                 >
-                  {link.label}
+                  Skills
                 </StarBorder>
-              );
-            }
-            if (link.href === '#portfolio') {
-              return (
+              </li>
+            </div>
+
+            <div className="second-row">
+              <li className="nav__item">
                 <StarBorder
                   as="a"
                   href="#portfolio"
-                  key={link.href}
-                  className="star-border font-medium"
+                  className="nav__link star-border"
+                  onClick={() => showMenu(false)}
                 >
-                  {link.label}
+                  Portfolio
                 </StarBorder>
-              );
-            }
+              </li>
 
-            if (link.href === '#contact') {
-              return (
+              <li className="nav__item">
                 <StarBorder
                   as="a"
                   href="#contact"
-                  key={link.href}
-                  className="star-border font-medium"
+                  className="nav__link star-border"
                   color="DeepSkyBlue"
                   speed="4s"
                   thickness="2"
+                  onClick={() => showMenu(false)}
                 >
-                  {link.label}
+                  Contact
                 </StarBorder>
-              );
-            }
+              </li>
+            </div>
 
-            return (
-              <StarBorder
-                  as="a"
-                  href={link.href}
-                  key={link.href}
-                  className="star-border font-medium text-xl"
-                >
-                  {link.label}
-                </StarBorder>
-            );
-          })}
-        </nav>
+          </ul>
 
-        {/* Mobile menu toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="text-white w-8 h-8"/> : <Menu className="text-white w-8 h-8"/>}
-          </button>
+          <FaAngleDoubleUp className="nav__close" onClick={() => showMenu(!Toggle)} />
         </div>
-      </div>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-zinc-950 border-t border-gray-200 shadow-md px-4 py-6 space-y-5 text-white font-medium">
-          {/* Social icons in mobile menu */}
-          <div className="flex space-x-4 mb-3">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="w-8 h-8"/>
+
+        {/* Overlay */}
+        <div id="myNav" className={`overlay ${Toggle ? 'show-overlay' : ''}`}>
+
+          {/* Button to close the overlay navigation */}
+          <FaAngleDoubleUp className="closebtn" onClick={() => showMenu(!Toggle)} />
+
+          {/* Overlay content */}
+          <ul className="nav__list">
+            <li className="nav__box">
+              <a href="#home" 
+              className="nav__link" 
+              onClick={(e) => {
+                  e.preventDefault();
+                  window.history.pushState(null, '', '#home');
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  });
+                  showMenu(false); // hides menu on click
+                }}
+              >
+                Home
+              </a>
+            </li>
+
+            <li className="nav__box">
+              <a href="#aboutme" 
+              className="nav__link" 
+              onClick={() => showMenu(false)}
+              >
+                About Me
+              </a>
+            </li>
+
+            <li className="nav__box">
+              <a href="#skills" 
+              className="nav__link" 
+              onClick={() => showMenu(false)}
+              >
+                Skills
+              </a>
+            </li>
+
+            <li className="nav__box">
+              <a href="#portfolio" 
+              className="nav__link" 
+              onClick={() => showMenu(false)}
+              >
+                Portfolio
+              </a>
+            </li>
+
+            <li className="nav__box">
+              <a href="#contact" 
+              className="nav__link" 
+              onClick={() => showMenu(false)}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+          
+          {/* Mobile icons */}
+          <div className="header__icons-section mobile-icons-overlay">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="header__icon" />
             </a>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="w-8 h-8"/>
+              <FaGithub className="header__icon" />
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="w-8 h-8"/>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebook className="header__icon" />
             </a>
           </div>
-
-          {navList.map((link) => (
-            <a
-              href={link.href}
-              key={link.href}
-              className="block text-lg"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
         </div>
-      )}
+
+        <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
+          <FaBars />
+        </div>
+
+      </nav>
     </header>
   );
 };

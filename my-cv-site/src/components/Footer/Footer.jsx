@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
             <div>
                 <ul className="footer__rights">
-                    <li>Kristina Zoria © {year}</li>
+                    <li>Jane Doe © {year}</li>
                     <li>All rights reserved.</li>
                 </ul>
             </div>

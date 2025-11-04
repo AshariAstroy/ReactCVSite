@@ -4,7 +4,7 @@
 :root {
   /* Colors */
   --bg-dark: #121212;
-  --bg-contact: rgba(23, 156, 218, 0.432);
+  --bg-contact: rgba(69, 148, 212, 0.432);
   --white: #fff;
   --grey: #B8B8B8;
   --hover-accent: LightSkyBlue;
@@ -38,6 +38,18 @@
   --contact-form-animation: 0.3s ease-in-out;
 }
 
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /************ Custom Font ************/
 @font-face {
 	font-family: Centra;
@@ -55,6 +67,12 @@
 	font-weight: 400;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -62,10 +80,18 @@ html {
 body {
   font-weight: var(--fs-footer-weight);
   overflow-x: hidden;
-  position: relative;
   background-color: var(--bg-dark) !important;
   color: var(--white) !important;
   font-family: 'Centra', sans-serif !important;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
 }
 
 p.success {
@@ -79,4 +105,22 @@ p.danger {
 img {
   width: 100%;
   height: auto;
+}
+
+
+/************ BREACKPOINTS ************/
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }

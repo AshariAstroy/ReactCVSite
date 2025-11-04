@@ -19,9 +19,24 @@
   margin: 0 auto 2rem auto;
 }
 
+.contact__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 4rem;
+  margin-top: 50px !important;
+  margin-bottom: 100px !important;
+  display: grid;
+  grid-template-columns: 55% 40%;
+  column-gap: 7rem;
+}
+
+.contact__img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .contact img {
-  margin-left: 50px;
-  width: 100%;
+  width: 500px;
   animation: var(--img-animation);
 }
 

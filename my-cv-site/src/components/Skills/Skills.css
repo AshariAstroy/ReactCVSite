@@ -16,7 +16,7 @@
 
 .skill img {
   margin-left: 50px;
-  width: 100%;
+  width: 500px;
   height: auto;
   animation: var(--img-animation);
 }

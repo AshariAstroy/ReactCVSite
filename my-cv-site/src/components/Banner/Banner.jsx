@@ -44,9 +44,9 @@ const Banner = () => {
 
     return (
         <section className="banner" id="home">
-            <div className="banner__section">
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={7}>
+            <Container>
+                <div className="banner__section">
+                    <div className="banner__hello-section">
                         <span className="tagline">Welcome to my Portfolio</span>
                         <h1>{`Hi I'm Jane, `}</h1>
                         <h1 className="movingtext"><span className="wrap">{text}</span></h1>
@@ -68,12 +68,12 @@ const Banner = () => {
                                 Let's connect!
                             </StarBorder>
                         </button>
-                    </Col>
-                    <Col xs={12} md={6} xl={5}>
+                    </div>
+                    <div className="banner__img-wrapper">
                         <img src={headerImg} alt="Header image" />
-                    </Col>
-                </Row>
-            </div>
+                    </div>
+                </div>
+            </Container>
         </section>
     );
 }

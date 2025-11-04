@@ -53,8 +53,8 @@ const Contact = () => {
                     <div className="contact__container-title">
                         <h2>Get in touch!</h2>
                     </div>
-                    <Row className="align-items-center">
-                        <Col md={6}>
+                    <div className="contact__container">
+                        <Col md={8}>
                             <form onSubmit={handleSubmit}>
                                 <Row>
                                     <Col size={12} sm={6} className="px-1">
@@ -98,12 +98,10 @@ const Contact = () => {
                                 </Row>
                             </form>
                         </Col>
-
-                        <Col xs={12} md={6} xl={5}>
+                        <div className="contact__img-wrapper">
                             <img src={contactImg} alt="Contact me" />
-                        </Col>
-
-                    </Row>
+                        </div>
+                    </div>
                 </div>
             </Container>
         </section>
