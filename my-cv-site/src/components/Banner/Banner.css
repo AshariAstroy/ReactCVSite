@@ -105,7 +105,19 @@
 
 /************ BREACKPOINTS ************/
 /* For large devices */
+@media screen and (max-width: 1299px) {
+  .banner__section {
+    column-gap: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
 @media screen and (max-width: 1199px) {
+  .banner__section {
+    margin: 0;
+  }
+
   .banner h1 {
     font-size: 55px;
   }
@@ -118,10 +130,6 @@
   .banner button .inner-content {
     padding: 16px 28px;
     font-size: 24px;
-  }
-
-  .banner__section {
-    column-gap: 4rem;
   }
 
   .movingtext {
