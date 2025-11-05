@@ -7,12 +7,12 @@ import { useEffect, useState } from 'react';
 
 
 const Projects = () => {
-    const [ item, setItem ] = useState({name: 'All'});
-    const [ projects, setProjects ] = useState([]);
-    const [ active, setActive ] = useState(0);
+    const [item, setItem] = useState({ name: 'All' });
+    const [projects, setProjects] = useState([]);
+    const [active, setActive] = useState(0);
 
     useEffect(() => {
-        if(item.name === 'All') {
+        if (item.name === 'All') {
             setProjects(projectsData);
         }
         else {
@@ -28,35 +28,33 @@ const Projects = () => {
         setActive(index);
     }
 
-  return (
-    <Container>
-        <Row className="align-items-center">
-            <div className="portfolio__filters">
-                {projectNav.map((item, index) => {
-                    return (<span onClick={(e) => {
+    return (
+        <Container>
+            <Row className="align-items-center">
+                <div className="portfolio__filters">
+                    {projectNav.map((item, index) => {
+                        return (<span onClick={(e) => {
                             handleClick(e, index);
-                        }} 
-                        className={`${active === index 
-                            ? 'active-portfolio' 
-                            : ""} portfolio__item`} 
+                        }}
+                            className={`${active === index
+                                ? 'active-portfolio'
+                                : ""} portfolio__item`}
                             key={index}
                         >
                             {item.name}
                         </span>);
                     })}
-            </div>
-        </Row>
-        <Row className="align-items-center">
-            <Col>
-                <div className="portfolio__container container grid">
-                    {projects.map((item) => {
-                        return <ProjectItems item={item} key={item.id} />;
-                    })}
                 </div>
-            </Col>
-        </Row>
-    </Container>
-  )
+            </Row>
+
+            <div className="portfolio__container container grid">
+                {projects.map((item) => {
+                    return <ProjectItems item={item} key={item.id} />;
+                })}
+            </div>
+
+        </Container>
+    )
 }
 
 export default Projects

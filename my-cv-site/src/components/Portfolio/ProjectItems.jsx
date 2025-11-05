@@ -6,7 +6,7 @@ const ProjectItems = ({item}) => {
         <img src={item.image} alt="" className="portfolio__img"/>
         <h3 className="portfolio__card-text">{item.title}</h3>
         <a href="#" className="portfolio__button">
-            Demo <FaLongArrowAltRight className="portfolio__button-icon"/>
+            GitHub <FaLongArrowAltRight className="portfolio__button-icon"/>
         </a>
     </div>
   )

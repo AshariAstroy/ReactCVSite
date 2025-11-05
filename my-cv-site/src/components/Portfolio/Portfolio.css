@@ -204,25 +204,37 @@
 }
 
 /* For medium devices */
+@media screen and (max-width: 899px)  {
+  .portfolio__img {
+    max-height: 150px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .portfolio__container {
-    grid-template-columns: max-content;
+    grid-template-columns: 85%;
   }
 }
 
 /* For small devices */
 @media screen and (max-width: 576px) {
   .portfolio__container {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio__img {
-    max-height: 160px;
+    grid-template-columns: 70%;
+    justify-content: center;
   }
 }
 
 /* For x-small devices */
 @media screen and (max-width: 480px) {
+  .portfolio__container {
+    grid-template-columns: 80%;
+  }
+
+  .portfolio__card-text,
+  .portfolio__button {
+    font-size: var(--fs-text);
+  }
+
   .portfolio__item {
     font-size: calc(var(--fs-contact-text) - 2px);
     padding: 6px 10px;
