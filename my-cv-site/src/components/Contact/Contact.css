@@ -7,7 +7,7 @@
   background-image: url('../../assets/img/bg-contact.png');
   background-color: var(--bg-dark);
   background-position: top center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .contact__section {
@@ -20,14 +20,13 @@
 }
 
 .contact__container {
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  column-gap: 4rem;
   margin-top: 50px !important;
-  margin-bottom: 100px !important;
   display: grid;
-  grid-template-columns: 55% 40%;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 50% 40%;
   column-gap: 7rem;
+  padding: 0;
 }
 
 .contact__img-wrapper {
@@ -77,9 +76,23 @@
 
 /************ BREACKPOINTS ************/
 /* For large devices */
+@media screen and (max-width: 1199px) {
+  .contact__form {
+    width: 120%;
+  }
+}
+
 @media screen and (max-width: 992px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+  }
+
   .contact h2 {
     text-align: center;
+  }
+
+  .contact__form {
+    width: 100%;
   }
 
   .contact__button {
@@ -89,37 +102,28 @@
     margin: 15px auto 0 auto;
     width: 100%;
   }
+
+  .contact img {
+    margin-top: 2rem;
+  }
 }
 
-/* .contact form button {
-  font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
-  font-size: 18px;
-  margin-top: 25px;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
-} */
-/* .contact form button span {
-  z-index: 1;
-  position: relative;
+/* For small devices */
+@media screen and (max-width: 576px) {
+  .contact__form {
+    width: auto;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
 }
-.contact form button:hover {
-  color: #fff;
+
+@media screen and (max-width: 400px) {
+  .contact__form {
+    margin: 0;
+  }
+
+  .contact form input::placeholder, .contact form textarea::placeholder,
+  .contact form input, .contact form textarea {
+    font-size: 16px;
+  }
 }
-.contact form button::before {
-  content: "";
-  background: #121212;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-.contact form button:hover::before {
-  width: 100%;
-} */

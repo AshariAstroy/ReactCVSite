@@ -54,7 +54,7 @@ const Contact = () => {
                         <h2>Get in touch!</h2>
                     </div>
                     <div className="contact__container">
-                        <Col md={8}>
+                        <div className="contact__form">
                             <form onSubmit={handleSubmit}>
                                 <Row>
                                     <Col size={12} sm={6} className="px-1">
@@ -97,7 +97,8 @@ const Contact = () => {
                                     }
                                 </Row>
                             </form>
-                        </Col>
+                        </div>
+
                         <div className="contact__img-wrapper">
                             <img src={contactImg} alt="Contact me" />
                         </div>
