@@ -9,6 +9,22 @@
   background-position: top center;
 }
 
+.skills__section {
+  margin: 0 auto 2rem auto;
+  max-width: 1200px;
+}
+
+.skills__container {
+  margin-top: 50px !important;
+  margin-bottom: 100px !important;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 50% 40%;
+  column-gap: 7rem;
+  padding: 0;
+}
+
 .skills__container-title{
   margin: 0 auto 2rem auto;
   max-width: 1200px;
@@ -79,17 +95,33 @@
   color: var(--hover-accent);
 }
 
+.skill__img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.skill img {
+  width: 500px;
+  height: auto;
+  animation: var(--img-animation);
+}
+
 /************ BREACKPOINTS ************/
 
-/* Extra large screens: 4 columns */
+/* For extra large devices */
 @media (min-width: 1200px) {
   .skill__boxes {
-    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
   }
 }
 
-/* Large screens: 3 columns */
+/* For large devices */
 @media (min-width: 992px) and (max-width: 1199px) {
+  .skills__container {
+    margin-bottom: 0 !important;
+    column-gap: 5rem;
+  }
+
   .skill__boxes {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -97,12 +129,21 @@
   .skill__box { 
     font-size: var(--fs-text); 
   }
+
+  .skill img {
+    margin: 0;
+  }
 }
 
-/* Medium screens: 2 columns */
+/* For medium devices */
 @media (min-width: 768px) and (max-width: 991px) {
+  .skills__container {
+    margin-bottom: 0 !important;
+    grid-template-columns: 100%;
+  }
+
   .skill__boxes {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .skill__title {
@@ -119,11 +160,19 @@
     display: flex;
     justify-content: center;
     text-align: center;
+  }
+
+  .skill img {
+    margin: 0;
   }
 }
 
-/* Small screens: 1 column */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
+  .skills__container {
+    margin-bottom: 0 !important;
+    grid-template-columns: 100%;
+  }
+  
   .skill__boxes {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -142,5 +191,21 @@
     display: flex;
     justify-content: center;
     text-align: center;
+  }
+
+  .skill img {
+    margin: 0;
+    margin-top: 2rem;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 400px) {
+  .skill__subtitle {
+    text-align: center;
+  }
+
+  .skill__box {
+    font-size: var(--fs-text);
   }
 }

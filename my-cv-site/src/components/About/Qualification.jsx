@@ -78,7 +78,7 @@ const Qualification = () => {
                     <span className="qualification__line"></span>
                   </div>
 
-                  <div>
+                  <div className="qualification__data-right">
                     <h3 className="qualification__title">Specialist</h3>
                     <span className="qualification__subtitle">Some place</span>
                     <div className="qualification__calender">
@@ -122,7 +122,7 @@ const Qualification = () => {
                     <span className="qualification__line"></span>
                   </div>
 
-                  <div>
+                  <div className="qualification__data-right">
                     <h3 className="qualification__title">Work position</h3>
                     <span className="qualification__subtitle">
                       Work place number 1

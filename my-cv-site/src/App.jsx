@@ -12,7 +12,6 @@ const App = () => {
   return (
     <div>
       <Header/>
-      <FloatingStars />
       <Banner id="home"/>
       <FloatingStars/>
       <About id="about"/>

@@ -6,15 +6,13 @@ const Skills = () => {
     return (
         <section className="skill" id="skills">
             <Container>
-                <Row className="align-items-center">
+                <div className="skills__section">
                     <div className="skills__container-title">
                         <h2 className="skill__title">Skills</h2>
                         <p className="skill__subtitle">I enjoy learning new things.</p>
                         <p className="skill__text">Here are some of the things that I've learned, learning, and continue to learn and improve.</p>
                     </div>
-                </Row>
-                <Row className="align-items-center">
-                    <Col xs={12} lg={7}>
+                    <div className="skills__container">
                         <div className="skill__boxes">
                             <p className="skill__box">C#</p>
                             <p className="skill__box">.NET (ASP.NET Core MVC)</p>
@@ -33,11 +31,11 @@ const Skills = () => {
                             <p className="skill__box">Customer Support</p>
                             <p className="skill__box">Server-side support</p>
                         </div>
-                    </Col>
-                    <Col xs={12} lg={5}>
-                        <img src={skillsImg} alt="Skills"/>
-                    </Col>
-                </Row>
+                        <div className="skill__img-wrapper">
+                            <img src={skillsImg} alt="Skills" />
+                        </div>
+                    </div>
+                </div>
             </Container>
         </section>
     );
