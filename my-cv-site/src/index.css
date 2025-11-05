@@ -11,3 +11,46 @@
                  0 0 70px theme('colors.zinc.950'),
   }
 }
+
+/*Scroll-up button*/
+.btn-visible {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically */
+  position: fixed;
+  bottom: 2.5rem;
+  right: 3rem;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.btn-visible .inner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+
+.btn-hidden {
+  display: none;
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  .btn-visible {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .btn-visible .inner-content {
+    font-size: 25px;
+    width: auto;
+    height: auto;
+    padding: 0.75rem;
+  }
+}

@@ -3,7 +3,7 @@
 .about {
   position: relative;
   margin-top: 0;
-  padding: 50px 0 100px 0;
+  padding: 50px 0 50px 0;
   background-image: url('../../assets/img/bg-contact.png');
   background-color: var(--bg-dark);
   background-position: top center;
@@ -21,7 +21,7 @@
 
 .about__container {
   margin-top: 50px !important;
-  margin-bottom: 100px !important;
+  margin-bottom: 150px !important;
   display: grid;
   justify-content: center;
   align-items: center;

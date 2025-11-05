@@ -1,3 +1,4 @@
+import ScrollToTopBtn from "./scroll-up";
 import Header from "./components/Header/Header";
 import Banner from "./components/Banner/Banner";
 import About from "./components/About/About";
@@ -11,7 +12,9 @@ const App = () => {
 
   return (
     <div>
+      <ScrollToTopBtn />
       <Header/>
+      <FloatingStars/>
       <Banner id="home"/>
       <FloatingStars/>
       <About id="about"/>

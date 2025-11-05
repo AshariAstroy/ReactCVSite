@@ -75,6 +75,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -106,7 +107,6 @@ img {
   width: 100%;
   height: auto;
 }
-
 
 /************ BREACKPOINTS ************/
 /* For large devices */

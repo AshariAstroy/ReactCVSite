@@ -80,6 +80,7 @@ const Header = () => {
                 <StarBorder
                   as="a"
                   href="#home"
+                  speed="5s"
                   onClick={(e) => {
                     e.preventDefault();
                     window.history.pushState(null, '', '#home');
@@ -100,6 +101,7 @@ const Header = () => {
                   as="a"
                   href="#aboutme"
                   className="nav__link star-border"
+                  speed="5s"
                   onClick={() => showMenu(false)}
                 >
                   About Me
@@ -111,6 +113,7 @@ const Header = () => {
                   as="a"
                   href="#skills"
                   className="nav__link star-border"
+                  speed="5s"
                   onClick={() => showMenu(false)}
                 >
                   Skills
@@ -124,6 +127,7 @@ const Header = () => {
                   as="a"
                   href="#portfolio"
                   className="nav__link star-border"
+                  speed="5s"
                   onClick={() => showMenu(false)}
                 >
                   Portfolio
