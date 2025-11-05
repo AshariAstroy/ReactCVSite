@@ -14,7 +14,6 @@ const App = () => {
     <div>
       <ScrollToTopBtn />
       <Header/>
-      <FloatingStars/>
       <Banner id="home"/>
       <FloatingStars/>
       <About id="about"/>

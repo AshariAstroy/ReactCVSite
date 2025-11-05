@@ -90,7 +90,7 @@ const Hero = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full h-32 bg-transparent overflow-hidden flex justify-center items-center"
+            className="floatingstars relative w-full h-32 bg-transparent overflow-hidden flex justify-center items-center"
             >
             <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
         </section>
