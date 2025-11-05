@@ -93,19 +93,22 @@
 
 .portfolio__card-text {
   font-size: var(--fs-contact-text);
-  margin: 0 0 15px 20px;
+  margin: 0 0 20px 20px;
 }
 
 .portfolio__button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   column-gap: 0.25rem;
   font-size: var(--fs-text);
   text-decoration: none;
   color: var(--white);
   margin: 0 0 10px 20px;
   transition: var(--buttons-hover-animation);
+  width: auto;
 }
+
 
 .portfolio__button:hover {
   color: var(--hover-accent);

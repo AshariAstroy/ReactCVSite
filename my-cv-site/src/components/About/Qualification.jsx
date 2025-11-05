@@ -23,24 +23,26 @@ const Qualification = () => {
           <div className="qualification__container container">
             <div className="qualification__tabs">
               {/* tabs */}
-              <div
-                className={toggleState === 1 ?
-                  "qualification__button qualification__active buttton--flex" :
-                  "qualification__button buttton--flex"}
+              <button
+                type="button"
+                className={toggleState === 1
+                  ? "qualification__button qualification__active buttton--flex"
+                  : "qualification__button buttton--flex"}
                 onClick={() => toggleTab(1)}
               >
-                <FaGraduationCap className="qualification__icon w-9 h-9" /> Education
-              </div>
+                <FaGraduationCap className="qualification__icon" /> Education
+              </button>
 
-              <div
-                className={toggleState === 2 ?
-                  "qualification__button qualification__active buttton--flex" :
-                  "qualification__button buttton--flex"}
+              <button
+                type="button"
+                className={toggleState === 2
+                  ? "qualification__button qualification__active buttton--flex"
+                  : "qualification__button buttton--flex"}
                 onClick={() => toggleTab(2)}
               >
-                {<FaBriefcase className="qualification__icon w-8 h-8" />}
-                Experience
-              </div>
+                <FaBriefcase className="qualification__icon" /> Experience
+              </button>
+
             </div>
 
             <div className="qualification__sections">

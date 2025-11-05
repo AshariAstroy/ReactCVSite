@@ -18,7 +18,15 @@ const About = () => {
           <div className="about__container container grid">
             <div className="about__info">
               <p className="about__description">Some text about me that I'll improve later after I'm done coding the website bla bla bla</p>
-              <a download="" href={CV} className="about__button button--flex">
+              <button
+                className="about__button"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = CV;
+                  link.download = 'CV-Jane.pdf';
+                  link.click();
+                }}
+              >
                 <StarBorder
                   as="div"
                   className="star-border-download"
@@ -28,7 +36,8 @@ const About = () => {
                 >
                   Download CV
                 </StarBorder>
-              </a>
+              </button>
+
             </div>
             <div className="about__img-wrapper">
               <img src={AboutImg} alt="Picture of Jane Doe" className="about__img" />

@@ -33,16 +33,14 @@ const Projects = () => {
             <Row className="align-items-center">
                 <div className="portfolio__filters">
                     {projectNav.map((item, index) => {
-                        return (<span onClick={(e) => {
-                            handleClick(e, index);
-                        }}
-                            className={`${active === index
-                                ? 'active-portfolio'
-                                : ""} portfolio__item`}
-                            key={index}
+                        return (<button
+                        type="button"
+                        onClick={(e) => handleClick(e, index)}
+                        className={`${active === index ? 'active-portfolio' : ""} portfolio__item`}
+                        key={index}
                         >
                             {item.name}
-                        </span>);
+                        </button>);
                     })}
                 </div>
             </Row>

@@ -21,7 +21,6 @@ const App = () => {
       <Portfolio id="portfolio"/>
       <FloatingStars/>
       <Contact id="contact"/>
-      <FloatingStars/>
       <Footer/>
     </div>
   )
