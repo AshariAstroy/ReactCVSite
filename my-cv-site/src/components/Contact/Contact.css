@@ -51,7 +51,6 @@
   border: var(--border-light);
   border-radius: var(--border-radius);
   color: var(--white);
-  margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: var(--fs-subtitle-weight);
   font-size: var(--fs-text);
@@ -72,6 +71,26 @@
 .contact form input:focus::placeholder, .contact form textarea:focus::placeholder {
   color: var(--bg-dark);
   opacity: 0.8;
+}
+
+.captcha {
+  margin: 10px 0 10px 0;
+}
+
+.contact__send-area {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.contact__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.px-1 {
+  margin-bottom: .5rem;
 }
 
 /************ BREACKPOINTS ************/
@@ -95,16 +114,13 @@
     width: 100%;
   }
 
-  .contact__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px auto 0 auto;
-    width: 100%;
-  }
-
   .contact img {
     margin-top: 2rem;
+  }
+
+  .captcha {
+    display: grid;
+    justify-content: center;
   }
 }
 
@@ -114,6 +130,27 @@
     width: auto;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .contact__send-area {
+    gap: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 460px) {
+  .contact__send-area {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contact__button {
+    order: 1;
+  }
+
+  .captcha {
+    margin-top: 1rem;
+    margin-bottom: 0;
   }
 }
 

@@ -1,10 +1,13 @@
 import './Contact.css';
 import { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import ReCAPTCHA from "react-google-recaptcha";
 import contactImg from "../../assets/img/contact-img.svg";
 import StarBorder from '../animations/StarBorder';
 
 const Contact = () => {
+    const [captchaValue, setCaptchaValue] = useState(null);
+
     const formInitialDetails = {
         firstName: '',
         lastName: '',
@@ -29,6 +32,10 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setButtonText('Sending...');
+        if (!captchaValue) {
+            alert("Please verify you are human!");
+            return;
+        }
         let response = await fetch("http://localhost:5000/contact", {
             method: "POST",
             headers: {
@@ -44,6 +51,7 @@ const Contact = () => {
         } else {
             setStatus({ success: false, message: 'Something went wrong, please try again later.' });
         }
+        console.log("Form submitted! Captcha value:", captchaValue);
     }
 
     return (
@@ -77,17 +85,24 @@ const Contact = () => {
                                     </Col>
                                     <Col size={12} className="px-1">
                                         <textarea rows={6} value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                                        <button className="contact__button">
-                                            <StarBorder
-                                                as="div"
-                                                className="star-border-send"
-                                                color="DeepSkyBlue"
-                                                speed="4s"
-                                                thickness="2"
-                                            >
-                                                {buttonText}
-                                            </StarBorder>
-                                        </button>
+
+                                        <div className="contact__send-area">
+                                            <button className="contact__button">
+                                                <StarBorder
+                                                    as="div"
+                                                    className="star-border-send"
+                                                    color="DeepSkyBlue"
+                                                    speed="4s"
+                                                    thickness="2"
+                                                >
+                                                    {buttonText}
+                                                </StarBorder>
+                                            </button>
+                                            <ReCAPTCHA className="captcha"
+                                                sitekey="your key here"
+                                                onChange={(value) => setCaptchaValue(value)}
+                                            />
+                                        </div>
                                     </Col>
                                     {
                                         status.message &&
