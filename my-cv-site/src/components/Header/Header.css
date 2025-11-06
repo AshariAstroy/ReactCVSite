@@ -161,6 +161,12 @@ a {
 
 /************ BREACKPOINTS ************/
 /* For large devices */
+@media screen and (min-width: 1400px) {
+  .overlay {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1399px) {
   .desktop-icons {
     margin-right: 0;
@@ -318,13 +324,18 @@ a {
   }
 
   .overlay .closebtn {
-    top: 3rem;
+    top: 4rem;
     right: 3.5rem;
   }
 
   .mobile-icons-overlay {
     margin: 0;
-    margin-bottom: 7rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .overlay .closebtn {
+    top: 3rem;
+    right: 2.5rem;
   }
 }
 
