@@ -1,0 +1,3 @@
+Hi! You are looking through the code of the website that I've made. 
+It was my first expirience with making a proper website, so most of the code was written based on several tutorials.
+It was fun!
