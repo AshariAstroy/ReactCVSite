@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { FaGraduationCap, FaBriefcase, FaCalendarAlt } from "react-icons/fa";
 import './Qualification.css';
 import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 const Qualification = () => {
+  const { t } = useTranslation();
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -16,8 +18,8 @@ const Qualification = () => {
         <div className="qualification__section">
 
           <div className="qualification__container-title">
-            <h2 className="qualification__journey">Qualification</h2>
-            <span className="qualification__subtitle__journey">My path to improvement</span>
+            <h2 className="qualification__journey">{t('qualification-title')}</h2>
+            <span className="qualification__subtitle__journey">{t('qualification-subtitle')}</span>
           </div>
 
           <div className="qualification__container container">
@@ -30,7 +32,7 @@ const Qualification = () => {
                   : "qualification__button buttton--flex"}
                 onClick={() => toggleTab(1)}
               >
-                <FaGraduationCap className="qualification__icon" /> Education
+                <FaGraduationCap className="qualification__icon" /> {t('qualification-tab-1')}
               </button>
 
               <button
@@ -40,7 +42,7 @@ const Qualification = () => {
                   : "qualification__button buttton--flex"}
                 onClick={() => toggleTab(2)}
               >
-                <FaBriefcase className="qualification__icon" /> Experience
+                <FaBriefcase className="qualification__icon" /> {t('qualification-tab-2')}
               </button>
 
             </div>
@@ -54,11 +56,11 @@ const Qualification = () => {
               >
                 <div className="qualification__data">
                   <div className="qualification__data-left">
-                    <h3 className="qualification__title">Full-stack developer</h3>
-                    <span className="qualification__subtitle">Some place - Anywhere</span>
+                    <h3 className="qualification__title">{t('qualification-education-1')}</h3>
+                    <span className="qualification__subtitle">{t('qualification-education-place-1')}</span>
                     <div className="qualification__calender">
                       <FaCalendarAlt className="qualification__calender-icon" />
-                      Year - Year
+                      {t('qualification-education-year-1')}
                     </div>
                   </div>
 
@@ -81,11 +83,11 @@ const Qualification = () => {
                   </div>
 
                   <div className="qualification__data-right">
-                    <h3 className="qualification__title">Specialist</h3>
-                    <span className="qualification__subtitle">Some place</span>
+                    <h3 className="qualification__title">{t('qualification-education-2')}</h3>
+                    <span className="qualification__subtitle">{t('qualification-education-place-2')}</span>
                     <div className="qualification__calender">
                       <FaCalendarAlt className="qualification__calender-icon" />
-                      Date Year - Date Year
+                      {t('qualification-education-year-2')}
                     </div>
                   </div>
                 </div>
@@ -98,11 +100,11 @@ const Qualification = () => {
               >
                 <div className="qualification__data">
                   <div className="qualification__data-left">
-                    <h3 className="qualification__title">Course</h3>
-                    <span className="qualification__subtitle">Another place</span>
+                    <h3 className="qualification__title">{t('qualification-job-1')}</h3>
+                    <span className="qualification__subtitle">{t('qualification-job-place-1')}</span>
                     <div className="qualification__calender">
                       <FaCalendarAlt className="qualification__calender-icon" />
-                      Date Year - Date Year
+                      {t('qualification-job-year-1')}
                     </div>
                   </div>
 
@@ -125,13 +127,11 @@ const Qualification = () => {
                   </div>
 
                   <div className="qualification__data-right">
-                    <h3 className="qualification__title">Work position</h3>
-                    <span className="qualification__subtitle">
-                      Work place number 1
-                    </span>
+                    <h3 className="qualification__title">{t('qualification-job-2')}</h3>
+                    <span className="qualification__subtitle">{t('qualification-job-place-2')}</span>
                     <div className="qualification__calender">
                       <FaCalendarAlt className="qualification__calender-icon" />
-                      Date Year - Date Year
+                      {t('qualification-job-year-2')}
                     </div>
                   </div>
                 </div>

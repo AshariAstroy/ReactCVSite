@@ -9,6 +9,8 @@
   display: grid;
   grid-template-columns: 1fr 20%;
   padding: 1rem 0 1rem 0;
+  align-items: center;
+  text-align: justify;
 }
 
 .footer__list {
@@ -30,6 +32,10 @@
   letter-spacing: var(--f-letter-spacing-footer);
 }
 
+.issues {
+  margin-top: 5px;
+}
+
 /************ BREACKPOINTS ************/
 /* For large devices */
 @media screen and (max-width: 992px) {
@@ -42,6 +48,12 @@
 
   .footer__list {
     order: 1;
+
+    padding: 0 1rem 0 1rem;
+  }
+
+  .footer li {
+    margin: 0;
   }
 
   .footer__rights {

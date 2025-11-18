@@ -1,16 +1,19 @@
 import './Skills.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import skillsImg from "../../assets/img/skills-img.svg";
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
+    const { t } = useTranslation();
+
     return (
         <section className="skill" id="skills">
             <Container>
                 <div className="skills__section">
                     <div className="skills__container-title">
-                        <h2 className="skill__title">Skills</h2>
-                        <p className="skill__subtitle">I enjoy learning new things.</p>
-                        <p className="skill__text">Here are some of the things that I've learned, learning, and continue to learn and improve.</p>
+                        <h2 className="skill__title">{t('skills-title')}</h2>
+                        <p className="skill__subtitle">{t('skills-subtitle')}</p>
+                        <p className="skill__text">{t('skills-text')}</p>
                     </div>
                     <div className="skills__container">
                         <div className="skill__boxes">
@@ -27,12 +30,12 @@ const Skills = () => {
                             <p className="skill__box">React</p>
                             <p className="skill__box">Angular</p>
                             <p className="skill__box">cPanel & WHM</p>
-                            <p className="skill__box">DNS & Hosting</p>
-                            <p className="skill__box">Customer Support</p>
-                            <p className="skill__box">Server-side support</p>
+                            <p className="skill__box">{t('skills-skill-1')}</p>
+                            <p className="skill__box">{t('skills-skill-2')}</p>
+                            <p className="skill__box">{t('skills-skill-3')}</p>
                         </div>
                         <div className="skill__img-wrapper">
-                            <img src={skillsImg} alt="Skills" />
+                            <img src={skillsImg} alt={t('skills-img')} />
                         </div>
                     </div>
                 </div>

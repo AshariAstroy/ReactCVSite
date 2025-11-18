@@ -3,9 +3,13 @@ import { FaLinkedin, FaGithub, FaFacebook, FaBars, FaAngleDoubleUp } from "react
 import StarBorder from '../animations/StarBorder';
 import ShinyText from "../animations/ShinyText";
 import { useState } from 'react';
+import LanguageSelector from '../../locales/LanguageSelector';
+import LanguageOverlay from '../../locales/LanguageOverlay';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [Toggle, showMenu] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <header className="header">
@@ -14,7 +18,7 @@ const Header = () => {
         <div className="nav__logo">
           <button onClick={(e) => {
             e.preventDefault();
-            window.history.pushState(null, '', window.location.pathname);
+            window.history.pushState(null, '', '/', window.location.pathname);
             window.scrollTo({
               top: 0,
               behavior: 'smooth'
@@ -29,14 +33,14 @@ const Header = () => {
               thickness="2"
             >
               <ShinyText
-                text="CV Jane Doe"
+                text={t('cv')}
                 disabled={false}
                 speed={4}
                 className='logo logo-title'
               />
               <br />
               <ShinyText
-                text="Full-stack developer"
+                text={t('title')}
                 disabled={false}
                 speed={4}
                 className='logo logo-subtitle'
@@ -47,13 +51,13 @@ const Header = () => {
 
         {/* Desktop icons */}
         <div className="header__icons-section desktop-icons">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="header__icon" />
           </a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer">
             <FaGithub className="header__icon" />
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <FaFacebook className="header__icon" />
           </a>
         </div>
@@ -65,44 +69,44 @@ const Header = () => {
               <li className="nav__item">
                 <StarBorder
                   as="a"
-                  href="#home"
+                  href="/home"
                   speed="5s"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.history.pushState(null, '', '#home');
+                    window.history.pushState(null, '', '/');
                     window.scrollTo({
                       top: 0,
                       behavior: 'smooth'
                     });
                     showMenu(false); // hides menu on click
                   }}
-                  className="nav__link star-border"
+                  className="nav__link star-border nav-link"
                 >
-                  Home
+                  {t('home')}
                 </StarBorder>
               </li>
 
               <li className="nav__item">
                 <StarBorder
                   as="a"
-                  href="#aboutme"
-                  className="nav__link star-border"
+                  href="/aboutme"
+                  className="nav__link star-border nav-link"
                   speed="5s"
                   onClick={() => showMenu(false)}
                 >
-                  About Me
+                  {t('about')}
                 </StarBorder>
               </li>
 
               <li className="nav__item">
                 <StarBorder
                   as="a"
-                  href="#skills"
-                  className="nav__link star-border"
+                  href="/skills"
+                  className="nav__link star-border nav-link"
                   speed="5s"
                   onClick={() => showMenu(false)}
                 >
-                  Skills
+                  {t('skills')}
                 </StarBorder>
               </li>
             </div>
@@ -111,26 +115,26 @@ const Header = () => {
               <li className="nav__item">
                 <StarBorder
                   as="a"
-                  href="#portfolio"
-                  className="nav__link star-border"
+                  href="/portfolio"
+                  className="nav__link star-border nav-link"
                   speed="5s"
                   onClick={() => showMenu(false)}
                 >
-                  Portfolio
+                  {t('portfolio')}
                 </StarBorder>
               </li>
 
               <li className="nav__item">
                 <StarBorder
                   as="a"
-                  href="#contact"
-                  className="nav__link star-border"
+                  href="/contact"
+                  className="nav__link star-border nav-link"
                   color="DeepSkyBlue"
                   speed="4s"
                   thickness="2"
                   onClick={() => showMenu(false)}
                 >
-                  Contact
+                  {t('contact')}
                 </StarBorder>
               </li>
             </div>
@@ -140,6 +144,10 @@ const Header = () => {
           <FaAngleDoubleUp className="nav__close" onClick={() => showMenu(!Toggle)} />
         </div>
 
+        {/* Desktop language dropdown */}
+        <div className="language">
+          <LanguageSelector />
+        </div>
 
         {/* Overlay */}
         <div id="myNav" className={`overlay ${Toggle ? 'show-overlay' : ''}`}>
@@ -147,14 +155,19 @@ const Header = () => {
           {/* Button to close the overlay navigation */}
           <FaAngleDoubleUp className="closebtn" onClick={() => showMenu(!Toggle)} />
 
+          {/* Mobile language overlay button */}
+          <div className="language-mobile">
+            <LanguageOverlay />
+          </div>
+
           {/* Overlay content */}
           <ul className="nav__list">
             <li className="nav__box">
-              <a href="#home" 
-              className="nav__link" 
-              onClick={(e) => {
+              <a href="/home"
+                className="nav__link nav-link"
+                onClick={(e) => {
                   e.preventDefault();
-                  window.history.pushState(null, '', '#home');
+                  window.history.pushState(null, '', '/');
                   window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -162,61 +175,62 @@ const Header = () => {
                   showMenu(false); // hides menu on click
                 }}
               >
-                Home
+                {t('home')}
               </a>
             </li>
 
             <li className="nav__box">
-              <a href="#aboutme" 
-              className="nav__link" 
-              onClick={() => showMenu(false)}
+              <a href="/aboutme"
+                className="nav__link nav-link"
+                onClick={() => showMenu(false)}
               >
-                About Me
+                {t('about')}
               </a>
             </li>
 
             <li className="nav__box">
-              <a href="#skills" 
-              className="nav__link" 
-              onClick={() => showMenu(false)}
+              <a href="/skills"
+                className="nav__link nav-link"
+                onClick={() => showMenu(false)}
               >
-                Skills
+                {t('skills')}
               </a>
             </li>
 
             <li className="nav__box">
-              <a href="#portfolio" 
-              className="nav__link" 
-              onClick={() => showMenu(false)}
+              <a href="/portfolio"
+                className="nav__link nav-link"
+                onClick={() => showMenu(false)}
               >
-                Portfolio
+                {t('portfolio')}
               </a>
             </li>
 
             <li className="nav__box">
-              <a href="#contact" 
-              className="nav__link" 
-              onClick={() => showMenu(false)}
+              <a href="/contact"
+                className="nav__link nav-link"
+                onClick={() => showMenu(false)}
               >
-                Contact
+                {t('contact')}
               </a>
             </li>
           </ul>
-          
+
           {/* Mobile icons */}
           <div className="header__icons-section mobile-icons-overlay">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="header__icon" />
             </a>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
               <FaGithub className="header__icon" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebook className="header__icon" />
             </a>
           </div>
         </div>
 
+        {/* Mobile menu toggle button */}
         <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
           <FaBars />
         </div>

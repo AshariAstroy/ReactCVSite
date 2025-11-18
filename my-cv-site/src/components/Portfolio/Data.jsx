@@ -1,35 +1,22 @@
 export const projectsData = [
     {
       "id": 1,
-      "title": "My CV Website",
-      "category": "React", 
-      "image": "/assets/images/projects-thumbnail/cv-site.jpg"
+      "title": 'portfolio-title-1',
+      "category": 'portfolio-category-react',
+      "image": "/assets/images/projects-thumbnail/cv-site.jpg",
+      "github": "https://github.com"
     },
     {
       "id": 2,
-      "title": "My Other Website",
-      "category": "C# & .NET",
-      "image": "/assets/images/projects-thumbnail/lazy-gudetama.jpg"
+      "title": 'portfolio-title-2',
+      "category": 'portfolio-category-dotnet',
+      "image": "/assets/images/projects-thumbnail/site-template.jpg",
+      "github": "https://github.com"
     },
-    {
-      "id": 3,
-      "title": "My CV Website",
-      "category": "Web development",
-      "image": "/assets/images/projects-thumbnail/cv-site.jpg"
-    }
 ]
 
 export const projectNav = [
-    {
-        name: 'All',
-    },
-    {
-        name: 'React',
-    },
-    {
-        name: 'C# & .NET',
-    },
-    {
-        name: 'Web development',
-    }
-]
+  { key: 'portfolio-category-all' },
+  { key: 'portfolio-category-react' },
+  { key: 'portfolio-category-dotnet' }
+];

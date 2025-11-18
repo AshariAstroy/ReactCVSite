@@ -3,12 +3,18 @@ import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../../assets/img/banner-img.svg";
 import { useEffect, useState } from "react";
 import StarBorder from '../animations/StarBorder';
+import { useTranslation } from 'react-i18next';
 
 
 const Banner = () => {
+    const { t } = useTranslation();
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Full-stack developer", "C# developer", ".NET developer"];
+    const toRotate = [
+        t('banner-moving-text-1'),
+        t('banner-moving-text-2'),
+        t('banner-moving-text-3')
+    ];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(200 - Math.random() * 100);
     const period = 2000;
@@ -47,14 +53,15 @@ const Banner = () => {
             <Container>
                 <div className="banner__section">
                     <div className="banner__hello-section">
-                        <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{`Hi I'm Jane, `}</h1>
+                        <span className="tagline">{t('banner-welcome')}</span>
+                        <h1>{t('banner-hi')}</h1>
                         <h1 className="movingtext"><span className="wrap">{text}</span></h1>
-                        <p>Some text that I'll later replace with something short and nice.</p>
+                        <p>{t('banner-text')}</p>
                         <button onClick={() => {
                             const contactSection = document.getElementById('contact');
                             if (contactSection) {
                                 contactSection.scrollIntoView({ behavior: 'smooth' });
+                                window.history.pushState({}, '', '/connect');
                             }
                         }}
                         >
@@ -65,12 +72,12 @@ const Banner = () => {
                                 speed="4s"
                                 thickness="2"
                             >
-                                Let's connect!
+                                {t('banner-connect')}
                             </StarBorder>
                         </button>
                     </div>
                     <div className="banner__img-wrapper">
-                        <img src={headerImg} alt="Header image" />
+                        <img src={headerImg} alt={t('banner-img')} />
                     </div>
                 </div>
             </Container>

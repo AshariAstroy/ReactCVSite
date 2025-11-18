@@ -2,8 +2,6 @@
 
 .banner {
   position: relative;
-  margin-top: 30px;
-  margin-bottom: 30px;
   padding: 100px 0 80px 0;
   background-image: url('../../assets/img/bg-banner.png');
   background-color: var(--bg-dark);
@@ -55,6 +53,7 @@
   letter-spacing: var(--f-letter-spacing);
   display: flex;
   align-items: center;
+  margin-top: 2.5rem;
 }
 
 .banner button .inner-content {
@@ -175,6 +174,7 @@
 
   .banner button {
     justify-content: center;
+    margin-top: 0;
   }
 
   .banner img {
@@ -233,6 +233,10 @@
 
   .banner .movingtext {
     min-height: 6rem;
+  }
+
+  .banner img {
+    margin-left: 30px;
   }
 }
 

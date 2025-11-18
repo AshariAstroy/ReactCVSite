@@ -33,7 +33,6 @@
   background: var(--bg-dark);
   color: var(--white);
   font-size: var(--fs-contact-text);
-  cursor: pointer;
   transition: var(--buttons-hover-animation);
   white-space: nowrap;
 }
@@ -235,7 +234,8 @@
 
   .portfolio__card-text,
   .portfolio__button {
-    font-size: var(--fs-text);
+    font-size: 16px;
+    padding-top: .5rem;
   }
 
   .portfolio__item {

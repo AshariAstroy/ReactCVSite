@@ -1,23 +1,25 @@
 import './Footer.css';
-import { Container, Row, Col } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
     const year = new Date().getFullYear();
+    const { t } = useTranslation();
 
   return (
     <footer className="footer">
         <div className="footer__container container">
             <div>
                 <ul className="footer__list">
-                    <li>This website was created as a learning project using free tutorials and royalty-free images. All rights belong to their original creators.</li>
-                    <li>The CV and portfolio content are for professional purposes only and may not be reused or copied for any other reason.</li>
-                    <li>Personal photos of me may not be used for any purpose.</li>
+                    <li>{t('footer-disclaimer-list-1')}</li>
+                    <li>{t('footer-disclaimer-list-2')}</li>
+                    <li>{t('footer-disclaimer-list-3')}</li>
+                    <li className="issues">{t('footer-issues')}</li>
                 </ul>
             </div>
             <div>
                 <ul className="footer__rights">
-                    <li>Jane Doe © {year}</li>
-                    <li>All rights reserved.</li>
+                    <li>{t('footer-name')} © {year}</li>
+                    <li>{t('footer-rights')}</li>
                 </ul>
             </div>
         </div>

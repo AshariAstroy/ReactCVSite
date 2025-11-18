@@ -79,6 +79,7 @@
   letter-spacing: var(--f-letter-spacing);
   line-height: var(--f-line-height-text);
   width: 100%;
+  text-align: justify;
 }
 
 /************ BREACKPOINTS ************/
@@ -121,6 +122,7 @@
 
   .about__description {
     margin: 0;
+    text-align: justify;
   }
 
   .about__info {
@@ -150,6 +152,7 @@
   .about__description {
     width: 100%;
     text-align: center;
+    text-align: justify;
   }
 }
 
